@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
+
+        <title>HSC Result Countdown</title>
+        <style>
+            #wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 100px;
+                font-weight: 400;
+                font-family: 'Reem Kufi', sans-serif;
+                width: 90%;
+                text-align: center;
+            }
+			#countdown {
+				font-weight: 700;
+			}
+            body {
+                margin: 0;
+            }
+            @media screen and (max-width: 1200px) {
+                #wrapper {
+                    font-size: 70px;
+                }
+            }
+			@media screen and (max-width: 810px) {
+                #wrapper {
+                    font-size: 50px;
+                }
+            }
+            @media screen and (max-width: 580px) {
+                #wrapper {
+                    font-size: 25px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            HSC Result Publishes in:
+            <div id="countdown"></div>
+        </div>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date(
+                "November 26, 2023 11:00:00"
+            ).getTime();
+
+            // Update the countdown every 1 second
+            var x = setInterval(function () {
+                // Get the current date and time
+                var now = new Date().getTime();
+
+                // Calculate the remaining time
+                var distance = countDownDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                var minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown
+                document.getElementById("countdown").innerHTML =
+                    days +
+                    "d " +
+                    hours +
+                    "h " +
+                    minutes +
+                    "m " +
+                    seconds +
+                    "s ";
+
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "The results are published. Hope you aced!";
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>
