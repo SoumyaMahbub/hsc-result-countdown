@@ -3,9 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="HSC Result Countdown" />
+        <meta
+            name="description"
+            content="The time remaining for hsc result 2023 to come out. Find out how much time is left."
+        />
+        <meta
+            name="keywords"
+            content="hsc, result, hsc result, hsc examination, 2023, hsc result 2023, hsc examination result 2023, hsc 2023, hsc examination 2023, countdown, countdown hsc, countdown hsc result, countdown hsc examination result, countdown hsc examination result 2023"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Soumya Mahbub" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
 
         <title>HSC Result Countdown</title>
         <style>
@@ -16,13 +32,13 @@
                 transform: translate(-50%, -50%);
                 font-size: 100px;
                 font-weight: 400;
-                font-family: 'Reem Kufi', sans-serif;
+                font-family: "Reem Kufi", sans-serif;
                 width: 90%;
                 text-align: center;
             }
-			#countdown {
-				font-weight: 700;
-			}
+            #countdown {
+                font-weight: 700;
+            }
             body {
                 margin: 0;
             }
@@ -31,7 +47,7 @@
                     font-size: 70px;
                 }
             }
-			@media screen and (max-width: 810px) {
+            @media screen and (max-width: 810px) {
                 #wrapper {
                     font-size: 50px;
                 }
@@ -45,7 +61,7 @@
     </head>
     <body>
         <div id="wrapper">
-            HSC Result Publishes in:
+            <div id="beforetext">HSC Result Publishes in:</div>
             <div id="countdown"></div>
         </div>
 
@@ -87,7 +103,9 @@
                 // If the countdown is over, display a message
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "The results are published. Hope you aced!";
+                    document.getElementById("countdown").innerText =
+                        "The results are published. Hope you aced!";
+                    document.getElementById("beforetext").innerText = "";
                 }
             }, 1000);
         </script>
